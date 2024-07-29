@@ -5,7 +5,7 @@ import FileTelechargeStyle from './StyleFileTelecharge';
 import { COLOR } from '../../Outils/Constantes';
 import { DeleteFile,OpenFile} from './FonctionOpen';
 
-const FileTélécharge= ({item}) => {
+const FileTelecherge= ({item}) => {
   const Type = ()=>{
     switch(item.type){
       case 'document':
@@ -50,4 +50,4 @@ const FileTélécharge= ({item}) => {
   )
 }
 
-export default FileTélécharge
+export default FileTelecherge

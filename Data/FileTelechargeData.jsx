@@ -1,7 +1,7 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 
- export const GetFichicerTéléchargé = () =>
+ export const GetFichicerTelecharge = () =>
  {
     const [data,setData] = useState([])
     useEffect(()=>{

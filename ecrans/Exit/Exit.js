@@ -1,18 +1,33 @@
 import { StyleSheet } from "react-native";
 import { COLOR } from "../../Outils/Constantes";
-
 const ExitStyle = StyleSheet.create({
     ExitConteneur:{
-        backgroundColor: COLOR.white,
-        flex:1,
-        flexDirection:"column",
-        justifyContent:"space-around",
-        alignItems:"center",
-        
+        flex: 1, 
+        display: "flex",
+        flexDirection: "column",
+        justifyContent:"space-evenly",
+        paddingHorizontal:60,
+        backgroundColor:COLOR.white
     },
     ExitImage:{
-        width:400,
-        height:400,
+        width: 300,
+        height: 300,
+    },
+    ExitBoutton:{
+        width: 300
+    },
+    ExitText1:{
+        color:COLOR.sombre,
+        fontSize: 25,
+        textAlign:"center",
+        fontWeight: "bold",
+        
+    },
+    ExitText:{
+        color:COLOR.sombre,
+        fontSize: 18,
+        fontWeight: "bold",
+        
     }
-}) 
+})
 export default ExitStyle

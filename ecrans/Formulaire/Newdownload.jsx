@@ -89,7 +89,7 @@ const Newdownload = () =>{
   }
 
   return (
-<View>
+<View style={{backgroundColor:COLOR.white,flex:1,flexDirection:"column",gap:50}}>
    <View id='FormularHeader' style={FormulaireStyle.header}>
         <ImageBackground source={image1} resizeMode='cover' style={FormulaireStyle.ImageBahground}>
            <View style={{flexDirection:"row",alignItems:"center",gap:9}}>

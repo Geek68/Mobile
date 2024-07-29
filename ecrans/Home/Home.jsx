@@ -9,7 +9,7 @@ import { GetFichicerTelecharge } from '../../Data/FileTelechargeData';
 const Home = () => {
   const dataTelechargee = GetFichicerTelecharge()
   return (
-    <View>
+    <View  id='HomeParent' style={{backgroundColor:COLOR.white,flex:1,flexDirection:"column",gap:20}}>
          <View id="header" style={HomeStyle.header}>
           <View id='logo' style={HomeStyle.logo}>
               <MaterialCommunityIcons name="cloud-download-outline" style={{fontSize:35,color:COLOR.sombre}}/>

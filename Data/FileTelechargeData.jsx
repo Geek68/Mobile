@@ -12,7 +12,7 @@ import { useEffect, useState } from "react"
  }
  export const DeleteFichicerTélécharge = (id)=>{
     axios.delete(`http://10.0.2.2:8000/api/deletedownload/${id}`)
-    .then(res=>{console.log(res.data.message)})
+    .then(res=>{alert(res.data.message)})
     .catch(error=>{console.log(error)})
  }
 

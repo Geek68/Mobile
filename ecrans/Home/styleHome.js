@@ -51,7 +51,7 @@ import { Image } from "react-native-paper/lib/typescript/components/Avatar/Avata
     },
     flatList:{
         white:"auto",
-        height:380,
+        height:530,
     }
   })
   export default HomeStyle;

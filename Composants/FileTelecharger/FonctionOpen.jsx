@@ -6,10 +6,12 @@ import { DeleteFichicerTélécharge } from '../../Data/FileTelechargeData';
 {
     await Permission()
     const typeTab= mimetype.split('/');
+    const pathFichier1 = `${emplacement}/${nom}.${typeTab[1]}`
     const pathFichier = `${emplacement}/${nom}`
     const fileExists = await RNFS.exists(pathFichier);
-    alert(fileExists)
-    if (fileExists) {
+    const fileExists1 = await RNFS.exists(pathFichier1);
+    
+    if (fileExists || fileExists1) {
         try {
             await RNFS.unlink(pathFichier);
             DeleteFichicerTélécharge(id);

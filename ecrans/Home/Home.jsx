@@ -34,7 +34,7 @@ const Home = () => {
             numColumns={2}
             style={HomeStyle.flatList}
             renderItem={({item})=>
-              <Telechargement name={item.nom}  type={item.type} taille={item.status}/>
+              <Telechargement item={item}/>
             }/>
       </View>
         </View>

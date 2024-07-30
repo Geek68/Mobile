@@ -1,14 +1,17 @@
-import { View, Text } from 'react-native'
+import { View, Text, Pressable } from 'react-native'
 import React from 'react'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import TelechargementStyle from './StyleTelechargement';
-import ProgressBar from 'react-native-progress/Bar'
-import { COLOR } from '../../Outils/Constantes';
-import moment from 'moment';
-const Telechargement = ({name,type,taille}) => {
-  const date = moment().format('DD-MM-YYYY');
+import { DeleteFile } from '../FileTelecharger/FonctionOpen';
+
+const Telechargement = ({item}) => {
+  const ConversitionDate = (date)=>{
+      const dateNow = new Date(date)
+      const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
+      return dateNow.toLocaleDateString('fr-FR', options);
+  }
   const Type = ()=>{
-    switch(type){
+    switch(item.type){
       case 'document':
         return <MaterialCommunityIcons name="file" style={TelechargementStyle.Icone}/>
       case 'audio':
@@ -35,18 +38,18 @@ const Telechargement = ({name,type,taille}) => {
   return (
     <View id='TelechargementParent' style={TelechargementStyle.parent}>
       <View id='header' style={TelechargementStyle.header}>
-        <Text>{date}</Text>
-        <MaterialCommunityIcons name="segment" style={{fontSize:15}}/>
+        <Text>{ConversitionDate(item.created_at)}</Text>
+        <Pressable onPress={()=>{DeleteFile(item.emplacement,item.nom,item.mimetype,item.id)}}>
+          <MaterialCommunityIcons name="delete" style={{fontSize:15}}/>
+        </Pressable>
       </View>
       <View id='PropretieNama' style={{flexDirection:"row",gap:10,alignItems:"center"}}>
           {
             Type()
           }
           <View style={{width:'90%'}}>
-            <Text  style={TelechargementStyle.name}>{name}</Text>
-            <Text>{convertBytes(taille)}</Text>
-            <Text>Temps restant</Text>
-            <Text>Etat</Text>
+            <Text  style={TelechargementStyle.name}>{item.nom}</Text>
+            <Text>{convertBytes(item.status)}</Text>
           </View>   
       </View>
     </View>
